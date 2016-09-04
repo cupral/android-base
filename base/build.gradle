@@ -1,28 +1,32 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'android-base'
+
+    publishedGroupId = 'it.jannax'
+    libraryName = 'android-base'
+    artifact = 'base'
+
+    libraryDescription = 'Base android application library'
+
+    siteUrl = 'https://github.com/cupral/android-base'
+    gitUrl = 'https://github.com/cupral/android-base.git'
+
+    libraryVersion = "0.0." + (System.getenv("BUILD_NUMBER") ?: "x")
+
+    developerId = 'cupral'
+    developerName = 'Luca Jannace'
+    developerEmail = 'ljannace@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
-
-    ext {
-        bintrayRepo = 'maven'
-        bintrayName = 'android-base'
-
-        publishedGroupId = 'it.jannax'
-        libraryName = 'android-base'
-        artifact = 'base'
-
-        libraryDescription = 'Base android application library'
-
-        siteUrl = 'https://github.com/cupral/android-base'
-        gitUrl = 'https://github.com/cupral/android-base.git'
-
-        libraryVersion = '0.0.1'
-
-        developerId = 'cupral'
-        developerName = 'Luca Jannace'
-        developerEmail = 'ljannace@gmail.com'
-    }
 
     defaultConfig {
         minSdkVersion 15
